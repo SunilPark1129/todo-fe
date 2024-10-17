@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import api from "../utils/api";
 
+// * 이번 과제 -----------------------------------------------------------------
 const TodoItem = ({ item, setTodoList }) => {
   const { _id, task, isComplete } = item;
   const complete = isComplete ? "끝남" : "안끝남";
@@ -12,6 +13,7 @@ const TodoItem = ({ item, setTodoList }) => {
 
       if (response.status === 200) {
         const res = await api.get("/tasks");
+        // 받아온 값을 표시하기 위해 state에 전달
         setTodoList(res.data.data);
       } else {
         throw new Error();
@@ -27,6 +29,7 @@ const TodoItem = ({ item, setTodoList }) => {
 
       if (response.status === 200) {
         const res = await api.get("/tasks");
+        // 받아온 값을 표시하기 위해 state에 전달
         setTodoList(res.data.data);
       } else {
         throw new Error();
