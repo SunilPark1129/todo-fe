@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// netlify로 접속안하면 자동으로 로컬호스트 포트로 연결합니다
 const api = axios.create({
-  baseURL: `${process.env.REACT_APP_BASE_URL}/api`,
+  baseURL: `${process.env.REACT_APP_BASE_URL || "http://localhost:5000"}/api`,
   headers: {
     "Content-Type": "application/json",
   },
